@@ -4,9 +4,6 @@ import { memories } from "./memories";
 
 const app = express();
 
-// Gebruik de door Railway toegekende poort, fallback lokaal 3000
-const PORT = process.env.PORT || 3000;
-
 // ===== EJS setup =====
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -39,8 +36,10 @@ app.get("/final", (req, res) => {
 });
 
 // ===== Server start =====
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server draait op poort ${PORT}`);
+  console.log(`🚀 Server draait op port ${PORT}`);
 });
+
 
 export {};
