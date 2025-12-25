@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>De Garage</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="garage-page">
+
+  <main class="garage">
+    <h1>De Garage 🏁</h1>
+    <p class="subtitle">Een paar momenten die ik met je wil delen</p>
+
+    <div class="cards">
+  <% memories.forEach((memory) => { %>
+    <div class="card" onclick="location.href='/garage/<%= memory.file %>'" style="cursor:pointer;">
+      <h2><%= memory.title %></h2>
+      <p><%= memory.text %></p>
+    </div>
+  <% }) %>
+</div>
+
+    <button class="next-btn" onclick="location.href='/final'">
+      The chequered flag 🏁 →
+    </button>
+  </main>
+
+</body>
+</html>

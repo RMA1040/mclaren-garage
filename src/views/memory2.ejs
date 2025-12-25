@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= memory.title %></title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body class="memory-page">
+
+  <main class="memory">
+    <h1><%= memory.title %></h1>
+
+    <img src="<%= memory.image %>" alt="<%= memory.title %>" />
+
+    <p><%= memory.description %></p>
+
+    <button class="btn back-btn" onclick="location.href='/garage'">
+      ← Terug naar de garage
+    </button>
+  </main>
+
+</body>
+</html>

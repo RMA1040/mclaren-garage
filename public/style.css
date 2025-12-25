@@ -1,0 +1,271 @@
+/* =====================================================
+   RESET & BASIS
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(180deg, #0b0b0b, #111);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   TRACK / ANIMATED BACKGROUND (INDEX)
+===================================================== */
+.track {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.car {
+  position: absolute;
+  height: 6px;
+  width: 180px;
+  background: linear-gradient(90deg, transparent, #ff8700, transparent);
+  opacity: 0.7;
+  animation: drive linear infinite;
+}
+
+.car-1 { top: 30%; animation-duration: 18s; }
+.car-2 { top: 45%; animation-duration: 25s; animation-delay: -10s; }
+.car-3 { top: 60%; animation-duration: 32s; animation-delay: -18s; }
+
+@keyframes drive {
+  from { transform: translateX(-250px); }
+  to   { transform: translateX(120vw); }
+}
+
+/* =====================================================
+   SHARED CONTENT WRAPPER
+===================================================== */
+.content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.intro {
+  max-width: 420px;
+  font-size: 1.05rem;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+button,
+.btn {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ff8700;
+  color: #000;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 135, 0, 0.4);
+}
+
+/* =====================================================
+   GARAGE PAGE
+===================================================== */
+.garage-page {
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+}
+
+.garage {
+  min-height: 100vh;
+  padding: 70px 20px 40px;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 12px auto 40px;
+  max-width: 480px;
+  opacity: 0.8;
+}
+
+/* Cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+/* Card */
+.card {
+  background: #111;
+  border-radius: 18px;
+  padding: 22px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+}
+
+.card h2 {
+  color: #ff8700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+}
+
+/* ===== MEMORY DETAIL PAGES ===== */
+
+.memory-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.memory {
+  width: 100%;
+  max-width: 640px;
+  background: #111;
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: fadeIn 1s ease forwards;
+}
+
+.memory h1 {
+  color: #ff8700;
+  font-size: 2rem;
+}
+
+.memory img {
+  width: auto;          /* originele breedte */
+  height: auto;         /* originele hoogte */
+  max-width: 100%;      /* NOOIT breder dan container */
+  display: block;
+  margin: 24px auto;
+  border-radius: 14px;
+}
+
+
+.memory p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.memory .back-btn {
+  margin-top: 12px;
+}
+
+/* =====================================================
+   FINAL PAGE
+===================================================== */
+.final-page {
+  background: radial-gradient(circle at center, #111, #000);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.final {
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.final-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: textFade 1.5s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.final-text strong {
+  color: #ff8700;
+}
+
+.final-images {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.final-images img {
+  height: 300px;
+  width: auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.final-images img:hover {
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textFade {
+  to { opacity: 1; }
+}
