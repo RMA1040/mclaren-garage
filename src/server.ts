@@ -9,7 +9,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // ===== Static files =====
-app.use(express.static(path.join(__dirname, "../public"))); // pas pad aan indien nodig
+app.use(express.static(path.join(__dirname, "../public")));
 
 // ===== Routes =====
 app.get("/", (req, res) => {
